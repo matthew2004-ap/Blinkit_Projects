@@ -1,4 +1,6 @@
 SELECT * FROM blinkit_grocery_data;
+
+
 SELECT
 COUNT(*)
 FROM blinkit_grocery_data;
@@ -95,7 +97,8 @@ SELECT
   outlet_type, 
   COUNT(*) AS no_of_items
 FROM blinkit_grocery_data
-GROUP BY outlet_type;
+GROUP BY outlet_type
+ORDER BY no_of_items DESC;
 
 -- Minimum and maximum sales per item type
 SELECT 
@@ -181,10 +184,9 @@ GROUP BY item_fat_content, outlet_location_type;
 SELECT 
   item_type, 
   SUM(total_sales) AS total_sales
-FROM blinkit_grocery_datac:\Users\Sean\Pictures\Screenshots\Screenshot (35).png
+FROM blinkit_grocery_data
 GROUP BY item_type
-ORDER BY total_sales DESC
-LIMIT 5;
+ORDER BY total_sales DESC;
 
 -- Pivot: Total sales for each Outlet_Location_Type split by Item_Fat_Content
 SELECT
